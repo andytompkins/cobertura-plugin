@@ -52,7 +52,7 @@
                     </j:forEach>
                 </tr>
                 <tr>
-                    <td>${it.name}</td>
+                    <td>${it.getJobName()}</td>
                     <j:forEach var="metric" items="${metrics}">
                         <td data="${it.getCoverage(metric).percentageString}">
                             <table class="percentgraph" cellpadding="0px" cellspacing="0px">

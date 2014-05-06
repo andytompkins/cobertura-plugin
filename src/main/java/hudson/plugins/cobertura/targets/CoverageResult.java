@@ -1,6 +1,7 @@
 package hudson.plugins.cobertura.targets;
 
 import hudson.model.AbstractBuild;
+import hudson.model.AbstractProject;
 import hudson.model.Api;
 import hudson.model.Item;
 import hudson.model.Run;
@@ -177,6 +178,16 @@ public class CoverageResult implements Serializable, Chartable {
         return null;
     }
 
+    /**
+     * Getter for job name.
+     *
+     * @return Value for job name.
+     */
+    public String getJobName() {
+		AbstractProject job = owner.getProject();
+		return job.getName();
+    }
+	
     /**
      * Getter for property 'sourceFileAvailable'.
      *
